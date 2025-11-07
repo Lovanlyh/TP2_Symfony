@@ -7,9 +7,9 @@
       "Authorization": "Bearer {{JWT_TOKEN}}"
     },
     "body": {
-      "drivers": [101, 102, 103]
+      "drivers": [1, 2]
     }
   },
-  "description": "Associer une sélection de pilotes à l'écurie 1. Remplacer {{JWT_TOKEN}} par un token valide."
+  "description": "Renseigner la liste des pilotes titulaires pour l'écurie 1."
 }
 

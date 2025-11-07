@@ -1,0 +1,18 @@
+{
+  "request": {
+    "method": "POST",
+    "url": "http://localhost:8000/api/infractions",
+    "headers": {
+      "Content-Type": "application/json",
+      "Authorization": "Bearer {{JWT_TOKEN}}"
+    },
+    "body": {
+      "driver": 1,
+      "description": "Collision évitable",
+      "points": 3,
+      "race": "Monaco 2025",
+      "date": "2025-06-01T14:30:00+00:00"
+    }
+  },
+  "description": "Distribuer une pénalité de points à un pilote (nécessite un token d'admin)."
+}

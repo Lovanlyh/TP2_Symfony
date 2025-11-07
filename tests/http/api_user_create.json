@@ -6,11 +6,11 @@
       "Content-Type": "application/json"
     },
     "body": {
-      "email": "new.user@example.com",
+      "email": "steward@example.com",
       "password": "ChangeMe123!",
-      "roles": ["ROLE_USER"]
+      "roles": ["ROLE_ADMIN"]
     }
   },
-  "description": "Créer un utilisateur applicatif. Nécessite les droits publics selon la configuration actuelle."
+  "description": "Création d'un compte API."
 }
 

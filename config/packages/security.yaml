@@ -16,10 +16,10 @@ security:
         main:
             #lazy: true
             #provider: app_user_provider
-            pattern: ^/api/login_check
+            pattern: ^/api/login
             stateless: true
             json_login:
-                check_path: /api/login_check
+                check_path: /api/login
                 username_path: email
                 password_path: password
                 success_handler: lexik_jwt_authentication.handler.authentication_success
