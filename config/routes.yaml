@@ -1,8 +1,13 @@
-controllers:
+api_controllers:
     resource:
-        path: ../src/Controller/
-        namespace: App\Controller
+        path: ../src/Controller/Api/
+        namespace: App\Controller\Api
+    type: attribute
+
+user_controller:
+    resource: ../src/Controller/UserController.php
     type: attribute
 
 api_login_check:
     path: /api/login_check
+    methods: [POST]

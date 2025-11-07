@@ -1,0 +1,15 @@
+{
+  "request": {
+    "method": "POST",
+    "url": "http://localhost:8000/api/login_check",
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "email": "admin@example.com",
+      "password": "adminpass"
+    }
+  },
+  "description": "Authentifier un utilisateur via LexikJWT pour obtenir un token."
+}
+

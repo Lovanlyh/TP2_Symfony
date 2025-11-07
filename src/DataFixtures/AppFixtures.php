@@ -15,7 +15,7 @@ class AppFixtures extends Fixture
 public function __construct(private UserPasswordHasherInterface $hasher) {}
 
 
-public function load(ObjectManager $manager)
+public function load(ObjectManager $manager):void
 {
 $teams = [];
 $teamNames = ['Ferrari', 'Alpine', 'Mclaren', 'Mercedes', 'Haas', 'Aston Martin', 'Williams', 'Sauber', 'Red Bull', 'Racing Bulls'];

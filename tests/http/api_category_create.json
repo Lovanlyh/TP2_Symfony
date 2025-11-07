@@ -1,0 +1,16 @@
+{
+  "request": {
+    "method": "POST",
+    "url": "http://localhost:8000/api/category/create",
+    "headers": {
+      "Content-Type": "application/json",
+      "Authorization": "Bearer {{JWT_TOKEN}}"
+    },
+    "body": {
+      "name": "Pièces détachées",
+      "description": "Catégorie réservée aux pièces moteurs."
+    }
+  },
+  "description": "Exemple de création de catégorie protégée nécessitant un token JWT avec le rôle ADMIN."
+}
+

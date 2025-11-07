@@ -1,0 +1,15 @@
+{
+  "request": {
+    "method": "PUT",
+    "url": "http://localhost:8000/api/teams/1/drivers",
+    "headers": {
+      "Content-Type": "application/json",
+      "Authorization": "Bearer {{JWT_TOKEN}}"
+    },
+    "body": {
+      "drivers": [101, 102, 103]
+    }
+  },
+  "description": "Associer une sélection de pilotes à l'écurie 1. Remplacer {{JWT_TOKEN}} par un token valide."
+}
+
