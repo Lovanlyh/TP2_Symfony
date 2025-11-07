@@ -2,11 +2,10 @@
 
 namespace App\DataFixtures;
 
-use App\Entity\Product;
 use App\Entity\Category;
 use Doctrine\Bundle\FixturesBundle\Fixture;
-use Doctrine\Persistence\ObjectManager;
 use Doctrine\Common\DataFixtures\DependentFixtureInterface;
+use Doctrine\Persistence\ObjectManager;
 use App\Service\ProductManager;
 
 class ProductFixtures extends Fixture implements DependentFixtureInterface
@@ -20,11 +19,15 @@ class ProductFixtures extends Fixture implements DependentFixtureInterface
     public function load(ObjectManager $manager): void
     {
         for ($i = 0; $i < 20; $i++) {
-            $name       = 'product '. $i;
-            $storage    = 10;
-            $category   = $manager->getRepository(Category::class)->find(rand(1, 5));
-            $product->setCategory($category);
-            $this->productManager->createProduct($name, $storage, $category, null);
+            $name     = 'product '.$i;
+            $storage  = 10;
+            $category = $manager->getRepository(Category::class)->find(rand(1, 5));
+
+            if (!$category) {
+                continue;
+            }
+
+            $this->productManager->createProduct($name, $storage, $category);
         }
 
         $manager->flush();

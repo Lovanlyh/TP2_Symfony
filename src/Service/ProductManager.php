@@ -3,8 +3,9 @@
 // src/Service/ProductManager.php
 namespace App\Service;
 
-use Doctrine\ORM\EntityManagerInterface;
 use App\Entity\Category;
+use App\Entity\Product;
+use Doctrine\ORM\EntityManagerInterface;
 
 class ProductManager
 {
@@ -14,19 +15,22 @@ class ProductManager
         $this->entityManager = $entityManager;
     }
 
-    public function createProduct(string $name, int $storage, Category $category, $unitPrice = null) : bool
+    public function createProduct(string $name, int $storage, Category $category, ?float $unitPrice = null): Product
     {
-        if (!$unitPrice) {
-            // création de produit depuis userFixtures
-            $unitPrice  = mt_rand(10, 100);
+        if ($unitPrice === null) {
+            $unitPrice = mt_rand(10, 100);
         }
 
         $product = new Product();
         $product->setName($name);
-        $product->setUnitPrice($unitPrice);
-        $product->setCreatedAt(new \Datetime());
-        // ... to be completed
+        $product->setUnitPrice(number_format($unitPrice, 2, '.', ''));
+        $product->setStorage($storage);
+        $product->setCategory($category);
+        $product->setCreatedAt(new \DateTime());
+
         $this->entityManager->persist($product);
+
+        return $product;
     }
 
     public function getHappyMessage(): string
